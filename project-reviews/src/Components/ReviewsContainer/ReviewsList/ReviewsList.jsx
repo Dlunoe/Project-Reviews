@@ -6,6 +6,9 @@ const Reviews = (props) =>{
             <li key={review._id}>
                 <span>{review.title}</span><br/>
                 <small>{review.description}</small>
+                <button onClick={()=>{
+                    console.log('hello')
+                }}>Delete</button>
             </li>
         )
     })
