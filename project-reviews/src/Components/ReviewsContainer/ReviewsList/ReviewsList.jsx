@@ -6,8 +6,9 @@ const Reviews = (props) =>{
             <li key={review._id}>
                 <span>{review.title}</span><br/>
                 <small>{review.description}</small>
-                <button onClick={()=>{
-                    console.log('hello')
+                <button onClick={(e)=>{
+                    e.preventDefault();
+                    props.deleteReview(review._id)
                 }}>Delete</button>
             </li>
         )

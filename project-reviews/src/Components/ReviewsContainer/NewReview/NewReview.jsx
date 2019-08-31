@@ -10,7 +10,7 @@ class NewReview extends Component {
     }
     updateReview = (e) =>{
         this.setState({
-            [e.currentTarget.name]: e.currentTarget.value
+            [e.target.name]: e.target.value
         })
     }
     render(){
@@ -18,8 +18,8 @@ class NewReview extends Component {
             <form onSubmit={(e)=>{
                 e.preventDefault();
                 this.props.addReview(this.state)}}>
-                Title:<input type="text" name="title" onChange={this.makeReview}/>
-                Description:<textarea name="description" onChange={this.makeReview}/>
+                Title:<input type="text" name="title" onChange={this.updateReview}/>
+                Description:<textarea name="description" onChange={this.updateReview}/>
                 <input type="submit" value="Add new game review"/>
             </form>
         )

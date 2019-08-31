@@ -9,7 +9,7 @@ router.get('/', async (req, res, next)=>{
         const allReviews = await Review.find();
         res.json({
             status:{
-                code: 1,
+                code: 200,
                 message:"success"
             },
             data: allReviews
@@ -26,7 +26,7 @@ router.post('/', async (req,res)=>{
         const madeReview = await Review.create(req.body);
         res.json({
             status:{
-                code:2,
+                code:201,
                 message:"review made"
             },
             data: madeReview
@@ -41,7 +41,7 @@ router.get('/:id', async (req, res, next)=>{
         const foundReview = await Review.findById(req.params.id);
         res.json({
             status:{
-                code:3,
+                code:200,
                 message: "found the review"
             },
             data: foundReview
@@ -56,7 +56,7 @@ router.put(':/id', async (req, res)=>{
         const updatedReview = await Review.findByIdAndUpdate(req.params.id, req.body, {new:true});
         res.json({
             status:{
-                code:4,
+                code:201,
                 message:"review updated"
             },
             data:updatedReview
@@ -71,7 +71,7 @@ router.delete('/:id', async (req, res)=>{
         const deletedReview = await Review.findByIdAndRemove(req.params.id);
         res.json({
             status:{
-                code:5,
+                code:200,
                 message: 'review deleted'
             },
             data: deletedReview

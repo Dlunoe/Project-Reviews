@@ -15,8 +15,8 @@ class ReviewsContainer extends Component {
     getReviews=async()=>{
         try{
             const response = await fetch('http://localhost:9000/reviews');
-
-            if(response.status.code !==1){
+            console.log(response, "this is get response")
+            if(response.status !== 200){
                 throw Error(response.statusText);
             }
             const parsedReviews = await response.json();
@@ -27,14 +27,39 @@ class ReviewsContainer extends Component {
         }
     }
     addReview = async (review, formData)=>{
-        console.log('this is addReview')
+        try{
+            const createdReview = await fetch('http://localhost:9000/reviews',{
+                method: 'POST',
+                body: JSON.stringify(review),
+                credentials: "include",
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            });
+            const createdJsonReview = await createdReview.json();
+            this.setState({reviews: [...this.state.reviews, createdJsonReview.data]})
+        } catch(err){
+            console.log(err)
+        }
+    }
+    deleteReview = async (id)=>{
+        try{
+            const deleteReview = await fetch('http://localhost:9000/reviews/' + id,{
+                method: 'DELETE',
+                credentials: "include"
+            })
+            const parsedResponse = await deleteReview.json();
+            this.setState({reviews: this.state.reviews.filter((review, i)=> review._id !==id)})
+        }catch(err){
+            console.log(err, "there was an error")
+        }
     }
     render(){
         return(
             <div>
             <p>this is ReviewsContainer</p>
             <NewReview addReview={this.addReview}/>
-            <Reviews reviews={this.state.reviews}  />
+            <Reviews reviews={this.state.reviews} deleteReview={this.deleteReview} />
             </div>
             
         )
