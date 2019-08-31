@@ -20,16 +20,21 @@ class ReviewsContainer extends Component {
                 throw Error(response.statusText);
             }
             const parsedReviews = await response.json();
+            console.log(parsedReviews)
             this.setState({reviews:parsedReviews.data})
         }catch(err){
             return err
         }
     }
+    addReview = async (review, formData)=>{
+        console.log('this is addReview')
+    }
     render(){
         return(
             <div>
             <p>this is ReviewsContainer</p>
-            <Reviews reviews={this.state.reviews} />
+            <NewReview addReview={this.addReview}/>
+            <Reviews reviews={this.state.reviews}  />
             </div>
             
         )

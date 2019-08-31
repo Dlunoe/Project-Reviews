@@ -14,6 +14,8 @@ class AuthGateway extends Component{
             <div>
                 <h1>Register as new user</h1>
                 <Register handleRegister={this.props.handleRegister}/>
+                <h1>Or log in as an existing user</h1>
+                <Login handleLogin={this.props.handleLogin}/>
             </div>
         )
     }
