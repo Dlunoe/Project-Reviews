@@ -54,12 +54,32 @@ class ReviewsContainer extends Component {
             console.log(err, "there was an error")
         }
     }
+    updateReview = async (id, formData)=>{
+        try{
+            const updatedReview = await fetch(`http://localhost:9000/reviews/${id}`,{
+                method: 'PUT',
+                credentials: 'include',
+                body: JSON.stringify(formData),
+                headers:{
+                    "Content-Type": "application/json"
+                }
+            })
+            const parsedResponse = await updatedReview.json();
+            console.log(parsedResponse);
+            if (parsedResponse.code===200){
+                await this.getReviews();
+            }
+            await this.getReviews();
+        }catch(err){
+            console.log(err)
+        }
+    }
     render(){
         return(
             <div>
             <p>this is ReviewsContainer</p>
             <NewReview addReview={this.addReview}/>
-            <Reviews reviews={this.state.reviews} deleteReview={this.deleteReview} />
+            <Reviews reviews={this.state.reviews} deleteReview={this.deleteReview} updateReview={this.updateReview}/>
             </div>
             
         )

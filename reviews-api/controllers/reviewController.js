@@ -51,12 +51,12 @@ router.get('/:id', async (req, res, next)=>{
     }
 })
 
-router.put(':/id', async (req, res)=>{
+router.put('/:id', async (req, res)=>{
     try{
         const updatedReview = await Review.findByIdAndUpdate(req.params.id, req.body, {new:true});
         res.json({
             status:{
-                code:201,
+                code:200,
                 message:"review updated"
             },
             data:updatedReview
