@@ -33,11 +33,20 @@ class EditReview extends Component{
             <div>
                 <Button color="primary" onClick={this.toggle}>Edit</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Edit review</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Edit {this.props.review.title}</ModalHeader>
                     <ModalBody>
                         <form>
                         Title:<input type="text" name="title" onChange={this.handleChange}/>
                         Description:<textarea name="description" onChange={this.handleChange}/>
+                        Your review of the game:<textarea name="description" onChange={this.handleChange}/>
+                        What would you rate this title? <select name="rating" onChange={this.updateReview}>
+                                <option></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
                         </form>
                     </ModalBody>
                     <ModalFooter>

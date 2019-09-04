@@ -78,8 +78,8 @@ class ReviewsContainer extends Component {
         return(
             <div>
             <p>this is ReviewsContainer</p>
-            <NewReview addReview={this.addReview}/>
             <Reviews reviews={this.state.reviews} deleteReview={this.deleteReview} updateReview={this.updateReview}/>
+            <NewReview addReview={this.addReview}/>
             </div>
             
         )

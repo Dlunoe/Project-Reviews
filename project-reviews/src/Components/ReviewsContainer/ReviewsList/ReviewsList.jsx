@@ -5,8 +5,10 @@ const Reviews = (props) =>{
     const reviewList = props.reviews.map((review, i)=>{
         return(
             <li key={review._id}>
-                <span>{review.title}</span><br/>
-                <small>{review.description}</small>
+                <h5>{review.title}</h5><br/>
+                <p>{review.description}</p>
+                <small>{review.review}</small>
+                <small>{review.rating}</small>               
                 <EditReview review={review} updateReview={props.updateReview}/>
                 <button onClick={(e)=>{
                     e.preventDefault();
