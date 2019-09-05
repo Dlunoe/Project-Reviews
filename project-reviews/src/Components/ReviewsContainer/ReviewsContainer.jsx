@@ -15,12 +15,12 @@ class ReviewsContainer extends Component {
     getReviews=async()=>{
         try{
             const response = await fetch('http://localhost:9000/reviews');
-            console.log(response, "this is get response")
+            // console.log(response, "this is get response")
             if(response.status !== 200){
                 throw Error(response.statusText);
             }
             const parsedReviews = await response.json();
-            console.log(parsedReviews)
+            // console.log(parsedReviews)
             this.setState({reviews:parsedReviews.data})
         }catch(err){
             return err
@@ -37,10 +37,12 @@ class ReviewsContainer extends Component {
                 }
             });
             const createdJsonReview = await createdReview.json();
-            this.setState({reviews: [...this.state.reviews, createdJsonReview.data]})
+            console.log(createdJsonReview)
+            this.setState({reviews: [...this.state.reviews, createdJsonReview.data], creator:this.props.username})
         } catch(err){
             console.log(err)
         }
+        console.log(this.props.username)
     }
     deleteReview = async (id)=>{
         try{
@@ -77,9 +79,9 @@ class ReviewsContainer extends Component {
     render(){
         return(
             <div>
-            <p>this is ReviewsContainer</p>
-            <Reviews reviews={this.state.reviews} deleteReview={this.deleteReview} updateReview={this.updateReview}/>
-            <NewReview addReview={this.addReview}/>
+            <p>You are in {this.props.username}'s Game Diary</p>
+            <Reviews reviews={this.state.reviews} deleteReview={this.deleteReview} updateReview={this.updateReview} username={this.props.username} userID={this.props.userID}/>
+            <NewReview addReview={this.addReview} username={this.props.username}/>
             </div>
             
         )

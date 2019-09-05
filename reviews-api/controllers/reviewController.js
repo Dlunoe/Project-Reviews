@@ -6,7 +6,7 @@ const Review = require('../models/review');
 
 router.get('/', async (req, res, next)=>{
     try{
-        const allReviews = await Review.find();
+        const allReviews = await Review.find().populate('User');
         res.json({
             status:{
                 code: 200,
@@ -21,6 +21,7 @@ router.get('/', async (req, res, next)=>{
 
 
 router.post('/', async (req,res)=>{
+    req.body.creator = req.session.userId;
     try{
         console.log('this is', req.body)
         const madeReview = await Review.create(req.body);
@@ -38,7 +39,7 @@ router.post('/', async (req,res)=>{
 
 router.get('/:id', async (req, res, next)=>{
     try{
-        const foundReview = await Review.findById(req.params.id);
+        const foundReview = await Review.findById(req.params.id).populate('User');
         res.json({
             status:{
                 code:200,

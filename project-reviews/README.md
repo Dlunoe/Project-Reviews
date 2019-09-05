@@ -1,6 +1,6 @@
-###
-This app is built and designed to be a basic app to hold game reviews. Users will be able to create accounts to add their personal reviews of videogames to a database.
-The end goal is to have a styled app that will display reviews in the database with the user's review and number rating displayed under the title.
+#React API Project
+##Description
+This app began as a review app, but evolved into what you see now. Using React, mongoose, and mongo features, I have developed a personal game diary. I have played plenty, but when you play some games enough, and try new things, you'll get some overlap. This site is a way for users to log individual experiences over multiple playthroughs with a personalized description and rating system. Are you on your 27th Skyrim playthrough, and can't remember if you liked playing Two-handed? Are you rebooting the Mass Effect againt, but can't remember if you like Ashley enough to save her? This app should help keep track of those things, so you don't get halfway through a game before you finally remember why you hated dedicating yourslef to that character build. You know what I'm talking about.
 
-V2 plans include adding a review model and search function, so that all reviews for one game will be held under the name instead of creating duplicates. The search function will, as expected, allow someone to search for a specific game and see all of the reviews for that game on it's own page.
-V2 plans (possibly sooner) will also add a clear user page to keep track of each users reviews across all games, and preventing them from leaving duplicate reviews (likely to redirect to an update page/modal.)
+##Backend Information
+This app uses a built-in express server to hold your login info, and all information is entered by the user (the database will log what YOU find relevant to the diary, without reliance on an outside API). Mongoose and express take care of the backend, while React displays all the relevant information on the browser.

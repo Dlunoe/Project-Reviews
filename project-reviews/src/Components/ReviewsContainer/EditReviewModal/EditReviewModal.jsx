@@ -36,10 +36,10 @@ class EditReview extends Component{
                     <ModalHeader toggle={this.toggle}>Edit {this.props.review.title}</ModalHeader>
                     <ModalBody>
                         <form>
-                        Title:<input type="text" name="title" onChange={this.handleChange}/>
-                        Description:<textarea name="description" onChange={this.handleChange}/>
-                        Your review of the game:<textarea name="description" onChange={this.handleChange}/>
-                        What would you rate this title? <select name="rating" onChange={this.updateReview}>
+                        Title:<input type="text" name="title" onChange={this.updateReview}/><br/>
+                        Description:<textarea name="description" onChange={this.updateReview} placeholder="What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences instead"/><br/>
+                        Your overall review:<textarea name="review" onChange={this.updateReview} placeholder="How did you enjoy the game this time around, did you do something new, discover something etc"/><br/>
+                        1-5 scale, how much did you enjoy this playthrough <select name="rating" onChange={this.updateReview}>
                                 <option></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>

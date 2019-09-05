@@ -8,7 +8,8 @@ class App extends React.Component {
     super();
     this.state={
       loggedIn:false,
-      username: null
+      username: null,
+      userID: null
     }
   }
   handleRegister = async (formData)=>{
@@ -21,10 +22,12 @@ class App extends React.Component {
       }
     })
     const parsedResponse = await registerResponse.json();
+    await console.log(parsedResponse)
+    //duplicate code = 11000
     if(parsedResponse.status.code===8){
       this.setState({
         loggedIn:true,
-        username:parsedResponse.status.username
+        username:parsedResponse.status.data.username
       })
     }
   }
@@ -38,10 +41,12 @@ class App extends React.Component {
       }
     })
     const parsedResponse = await registerResponse.json();
+    await console.log(parsedResponse.data._id)
     if(parsedResponse.status.code===7){
       this.setState({
         loggedIn:true,
-        username: parsedResponse.status.username
+        username: parsedResponse.data.username,
+        userID:parsedResponse.data._id
       })
     }
   }
@@ -49,7 +54,7 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.state.loggedIn ?
-        <ReviewsContainer/> :
+        <ReviewsContainer username={this.state.username} userID={this.state.userID}/> :
         <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin}/>
       }
       </div>
