@@ -28,7 +28,7 @@ class Register extends Component{
     render(){
         return(
             <div>
-                <Button color="secondary" onClick={this.toggle}>New User? Register an account</Button>
+                <Button color="secondary" onClick={this.toggle} size="sm">New User? Register an account</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader>New User Signup</ModalHeader>
                     <ModalBody>

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const ReviewSchema = new mongoose.Schema({
     title:String,
     description: String,
-    playthrough: Number,
+    playthrough: String,
     review: String,
     rating: Number,
     creator: {

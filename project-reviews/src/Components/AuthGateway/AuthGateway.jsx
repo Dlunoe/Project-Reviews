@@ -11,9 +11,12 @@ class AuthGateway extends Component{
     }
     render(){
         return(
-            <div>
+            <div class="auth-container">
+                <header class="header">
                 <h1>Welcome to Game Diaries</h1>
-                <p>
+                </header>
+                
+                <p class="register-body">
                     This is an app intended to keep track of multiple game playthroughs. 
                     If you're like me, you've absolutely replayed some of your favorite videogames multiple times, and if you're like me, you've probably forgotten a lot of these.
                     The intention of this app is to give you a place to keep track of multiple playthroughs, letting you leave a description of the playthrough and how much you enjoyed it.

@@ -79,7 +79,7 @@ class ReviewsContainer extends Component {
     render(){
         return(
             <div>
-            <p>You are in {this.props.username}'s Game Diary</p>
+            <h1 class="header">Welcome to your diary, {this.props.username}.</h1>
             <Reviews reviews={this.state.reviews} deleteReview={this.deleteReview} updateReview={this.updateReview} username={this.props.username} userID={this.props.userID}/>
             <NewReview addReview={this.addReview} username={this.props.username}/>
             </div>

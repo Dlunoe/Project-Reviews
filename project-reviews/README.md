@@ -4,3 +4,8 @@ This app began as a review app, but evolved into what you see now. Using React, 
 
 ##Backend Information
 This app uses a built-in express server to hold your login info, and all information is entered by the user (the database will log what YOU find relevant to the diary, without reliance on an outside API). Mongoose and express take care of the backend, while React displays all the relevant information on the browser.
+
+
+
+####Other sources:
+Header Image background: https://wallpaperscraft.com/wallpaper/keyboard_tail_gerbil_85378;
