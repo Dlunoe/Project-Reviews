@@ -39,7 +39,8 @@ class NewReview extends Component {
                     <ModalBody>
                         <form>
                         Title:<input type="text" name="title" onChange={this.updateReview}/><br/>
-                        Description:<textarea name="description" onChange={this.updateReview} placeholder="What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences instead"/><br/>
+                        Description:<textarea name="description" onChange={this.updateReview} placeholder="What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences"/><br/>
+                        Playthrough:<input name="playthrough" type="text" onChange={this.updateReview} placeholder="Some description of which playthrough this was (x hours, certain campaign, etc)"/>
                         Your overall review:<textarea name="review" onChange={this.updateReview} placeholder="How did you enjoy the game this time around, did you do something new, discover something etc"/><br/>
                         1-5 scale, how much did you enjoy this playthrough <select name="rating" onChange={this.updateReview}>
                                 <option></option>

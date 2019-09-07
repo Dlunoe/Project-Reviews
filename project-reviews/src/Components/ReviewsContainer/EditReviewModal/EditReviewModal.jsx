@@ -8,6 +8,9 @@ class EditReview extends Component{
             id:this.props.review._id,
             title:this.props.review.title,
             description:this.props.review.description,
+            playthrough: this.props.review.playthrough,
+            review: this.props.review.review,
+            rating: this.props.review.rating,
             modal: false
         };
         this.toggle = this.toggle.bind(this);
@@ -31,15 +34,16 @@ class EditReview extends Component{
     render(){
         return(
             <div>
-                <Button color="primary" onClick={this.toggle} size="sm">Edit</Button>
+                <Button color="primary" onClick={this.toggle} size="sm" class="list-edit">Edit</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Edit {this.props.review.title}</ModalHeader>
                     <ModalBody>
                         <form>
-                        Title:<input type="text" name="title" onChange={this.updateReview}/><br/>
-                        Description:<textarea name="description" onChange={this.updateReview} placeholder="What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences instead"/><br/>
-                        Your overall review:<textarea name="review" onChange={this.updateReview} placeholder="How did you enjoy the game this time around, did you do something new, discover something etc"/><br/>
-                        1-5 scale, how much did you enjoy this playthrough <select name="rating" onChange={this.updateReview}>
+                        Title:<input type="text" name="title" onChange={this.handleChange}/><br/>
+                        Description:<textarea name="description" onChange={this.handleChange} placeholder="What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences instead"/><br/>
+                        Playthrough:<input type="text" name="playthrough" onChange={this.handleChange} placeholder="Some description of which playthrough this was (x hours, certain campaign, etc)"/>
+                        Your overall review:<textarea name="review" onChange={this.handleChange} placeholder="How did you enjoy the game this time around, did you do something new, discover something etc"/><br/>
+                        1-5 scale, how much did you enjoy this playthrough <select name="rating" onChange={this.handleChange}>
                                 <option></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
