@@ -8,7 +8,13 @@ This app uses an express server to hold your login info, and all information is 
 
 ##Wireframes
 ####Component Heirarchy
-![Components](https://imgur.com/u7bmBaE)
+![Components](https://i.imgur.com/u7bmBaE.jpg)
+####Wireframe
+![Wireframe](https://i.imgur.com/gSJCDQP.jpg?2)
+
+##Future versions
+-Search function
+-"Friends" functionality?
 
 
 
