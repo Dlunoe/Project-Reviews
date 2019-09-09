@@ -35,29 +35,33 @@ ul {
   margin: 0 5%;
 }
 .list-title{
- align-self:left;
-padding: 0 30% 0 0;
+ width: 50%;
+text-align: left;
 }
 .list-description{
 margin:auto;
 flex-grow: 2;
+width: 100%;
+padding: 2% 0;
 }
 .list-playthrough{
-  padding: 0 0 0 30%;
-align-self:right;
+  width: 50%;
+text-align:right;
 }
 .list-review{
 margin:auto;
 flex-grow: 2;
+width: 100%;
+padding: 0 0 1% 0;
 }
 .list-rating{
 
 }
 .list-edit{
 align-self:flex-end;
-
+padding: 0 30% 0 0;
 }
 .list-delete{
 align-items:flex-end;
-size: 1500000%
+padding: 0 0 0 30%;
 }

@@ -24,7 +24,10 @@ class App extends React.Component {
     const parsedResponse = await registerResponse.json();
     await console.log(parsedResponse)
     //duplicate code = 11000
-    if(parsedResponse.status.code===8){
+    if(parsedResponse.code===11000){
+      alert("Username is already taken");
+    }
+    else if(parsedResponse.status.code===8){
       this.setState({
         loggedIn:true,
         username:parsedResponse.status.data.username
@@ -40,8 +43,9 @@ class App extends React.Component {
         "Content-Type": "application/json"
       }
     })
+    console.log(registerResponse)
     const parsedResponse = await registerResponse.json();
-    await console.log(parsedResponse.data._id)
+    await console.log(parsedResponse)
     if(parsedResponse.status.code===7){
       this.setState({
         loggedIn:true,

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
+const editStyle={
+    alignItems:'flex-end',
+    margin: '0 30% 0 0',
+}
 class EditReview extends Component{
     constructor(props){
         super(props);
@@ -15,6 +19,7 @@ class EditReview extends Component{
         };
         this.toggle = this.toggle.bind(this);
     }
+    
     toggle(){
         this.setState(prevState=>({
             modal: !prevState.modal
@@ -34,15 +39,15 @@ class EditReview extends Component{
     render(){
         return(
             <div>
-                <Button color="primary" onClick={this.toggle} size="sm" class="list-edit">Edit</Button>
+                <Button color="primary" onClick={this.toggle} size="sm" class="list-edit" style={editStyle}>Edit</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Edit {this.props.review.title}</ModalHeader>
                     <ModalBody>
                         <form>
-                        Title:<input type="text" name="title" onChange={this.handleChange}/><br/>
-                        Description:<textarea name="description" onChange={this.handleChange} placeholder="What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences instead"/><br/>
-                        Playthrough:<input type="text" name="playthrough" onChange={this.handleChange} placeholder="Some description of which playthrough this was (x hours, certain campaign, etc)"/>
-                        Your overall review:<textarea name="review" onChange={this.handleChange} placeholder="How did you enjoy the game this time around, did you do something new, discover something etc"/><br/>
+                        Title:<input type="text" name="title" onChange={this.handleChange} placeholder={this.state.title}/><br/>
+                        Description:<textarea name="description" onChange={this.handleChange} placeholder={this.state.description}/><br/>
+                        Playthrough:<input type="text" name="playthrough" onChange={this.handleChange} placeholder={this.state.playthrough}/>
+                        Your overall review:<textarea name="review" onChange={this.handleChange} placeholder={this.state.review}/><br/>
                         1-5 scale, how much did you enjoy this playthrough <select name="rating" onChange={this.handleChange}>
                                 <option></option>
                                 <option value="1">1</option>

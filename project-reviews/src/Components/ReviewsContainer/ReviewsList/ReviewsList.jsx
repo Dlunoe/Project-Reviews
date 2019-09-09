@@ -1,6 +1,12 @@
 import React from 'react';
+
 import EditReview from '../EditReviewModal/EditReviewModal';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';;
+
+const deleteStyle={
+    alignItems:'flex-end',
+    margin: '0 0 0 30%',
+}
 
 const Reviews = (props) =>{
     const reviewList = props.reviews.map((review, i)=>{
@@ -17,7 +23,7 @@ const Reviews = (props) =>{
                     <Button onClick={(e)=>{
                         e.preventDefault();
                         props.deleteReview(review._id)
-                    }} class="list-delete">Delete</Button>  
+                    }} class="list-delete" style={deleteStyle}>Delete</Button>  
                 </li>
             )
          }

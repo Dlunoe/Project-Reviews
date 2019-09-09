@@ -33,15 +33,15 @@ class NewReview extends Component {
     render(){
         return(
             <div>
-                <Button color="primary" onClick={this.toggle}>Add a review</Button>
+                <Button color="primary" onClick={this.toggle} class="list-edit">Add a review</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Add a review</ModalHeader>
                     <ModalBody>
                         <form>
                         Title:<input type="text" name="title" onChange={this.updateReview}/><br/>
-                        Description:<textarea name="description" onChange={this.updateReview} placeholder="What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences"/><br/>
-                        Playthrough:<input name="playthrough" type="text" onChange={this.updateReview} placeholder="Some description of which playthrough this was (x hours, certain campaign, etc)"/>
-                        Your overall review:<textarea name="review" onChange={this.updateReview} placeholder="How did you enjoy the game this time around, did you do something new, discover something etc"/><br/>
+                        Description (What's a good description of how this playthrough differed from others, or perhaps log your current playtime and experiences):<br/><textarea name="description" onChange={this.updateReview}/><br/>
+                        Playthrough (x hours, certain campaign, etc):<input name="playthrough" type="text" onChange={this.updateReview}/><br/>
+                        Your overall review of the playthrough, how did you enjoy the game this time around:<br/><textarea name="review" onChange={this.updateReview}/><br/>
                         1-5 scale, how much did you enjoy this playthrough <select name="rating" onChange={this.updateReview}>
                                 <option></option>
                                 <option value="1">1</option>
