@@ -1,9 +1,14 @@
 #React API Project
 ##Description
-This app began as a review app, but evolved into what you see now. Using React, mongoose, and mongo features, I have developed a personal game diary. I have played plenty, but when you play some games enough, and try new things, you'll get some overlap. This site is a way for users to log individual experiences over multiple playthroughs with a personalized description and rating system. Are you on your 27th Skyrim playthrough, and can't remember if you liked playing Two-handed? Are you rebooting the Mass Effect againt, but can't remember if you like Ashley enough to save her? This app should help keep track of those things, so you don't get halfway through a game before you finally remember why you hated dedicating yourslef to that character build. You know what I'm talking about.
+This app began as a review app, but evolved into what you see now. Using React, mongoose, and mongo features, I have developed a personal game diary. Every gamer has their favorite games, and will without a doubt play them more than once.
+ Are you on your 27th Skyrim playthrough, and can't remember if you liked playing Two-handed? Are you rebooting the Mass Effect again, but can't remember if you like a certain someone enough to save them? This app should help keep track of those things, so you don't get halfway through a playthrough before you finally remember why you hated that character build. You know what I'm talking about.
 
-##Backend Information
-This app uses a built-in express server to hold your login info, and all information is entered by the user (the database will log what YOU find relevant to the diary, without reliance on an outside API). Mongoose and express take care of the backend, while React displays all the relevant information on the browser.
+##Language Information
+This app uses an express server to hold your login info, and all information is entered by the user. Mongoose and express take care of the backend, while React displays all the relevant information on the browser, with reactstrap adding cleaner buttons and modals for the forms.
+
+##Wireframes
+####Component Heirarchy
+![Components](https://imgur.com/u7bmBaE)
 
 
 
