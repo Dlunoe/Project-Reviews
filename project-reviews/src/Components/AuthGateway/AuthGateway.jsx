@@ -18,9 +18,7 @@ class AuthGateway extends Component{
                 
                 <p class="register-body">
                     This is an app intended to keep track of multiple game playthroughs. 
-                    If you're like me, you've absolutely replayed some of your favorite videogames multiple times, and if you're like me, you've probably forgotten a lot of these.
-                    The intention of this app is to give you a place to keep track of multiple playthroughs, letting you leave a description of the playthrough and how much you enjoyed it.
-                    Due to the nature of this app, you'll need to be logged in to use any of it's features.
+                    This app will allow you to log multiple playthrougs of videogames, with the intent that you can use these logs to determine if a playthrough is worth replaying or returning to in the future.
                 </p>
                 <Login handleLogin={this.props.handleLogin}/>
                 <Register handleRegister={this.props.handleRegister}/>
